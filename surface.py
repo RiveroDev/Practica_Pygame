@@ -19,11 +19,23 @@ red = pygame.Color(255,0,0)  # nota .Color la c es en mayuscula
 
 # o por medio de tuplas
 my_color = (253,58,94)   # esta tupla genera un rgb tambien 
+color2 = (154,174,95)
 #---------------------------------------------------------------
 
 #--------------------------------------------------------------
 # Uso de los rectangulos para manejo de iamgenes y coliciones
 rect = pygame.Rect(100, 150, 120,60)  # posicion en x , posicion en y,  ancho , alto
+rect.center = (width // 2 , height // 2)  # x , y .... son las coredenadas del centro del rectangulo de valores enteros 
+ # esta propiedad recalcula en centro de la posicion del rectangulo 
+
+# generamos otro rectangulo por medio de tuplas
+rect2 = (100,100,80,40) # x ,y , ancho, alto
+
+#Notas implortantes :
+# si se crean rectangulos con tuplas no se pueden usar las propiedades de Rect()\
+# es por esto que si se necesita usar un rectangulo con movimiento se crean con Rect()
+# si los rectangulos vas a ses fijos sin movimiento se crean por medio de tuplas
+
 
 #-----------------------------------------------------------------------
 # este ciclo white es el bucle que esta a la escucha de todos los eventos en pantalla
@@ -38,6 +50,9 @@ while True:       # este while estara a la escucha de todo los eventos
     surface.fill(my_color)           #  .fill() resive un parameto y es el que pinta la pantalla
    
     pygame.draw.rect(surface, red, rect)    # ventana a ejecuta, color , dimenciones del rectangulo
+    pygame.draw.rect(surface, color2, rect2) # otro rectangulo 
+
     pygame.display.update()     # el .updata() es para que la pantalla se actualice y se ve el cambio 
 
+    
 
