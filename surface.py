@@ -36,7 +36,6 @@ rect2 = (100,100,80,40) # x ,y , ancho, alto
 # es por esto que si se necesita usar un rectangulo con movimiento se crean con Rect()
 # si los rectangulos vas a ses fijos sin movimiento se crean por medio de tuplas
 
-
 #-----------------------------------------------------------------------
 # este ciclo white es el bucle que esta a la escucha de todos los eventos en pantalla
 while True:       # este while estara a la escucha de todo los eventos 
@@ -49,8 +48,18 @@ while True:       # este while estara a la escucha de todo los eventos
 # tanto una tupla como la libreria color van dentro de fill()
     surface.fill(my_color)           #  .fill() resive un parameto y es el que pinta la pantalla
    
+
+#---------------------------------------------------------------------------
+# usar el modulo draw()
+# se usa para dibujar en la superfici de la ventana 
+
     pygame.draw.rect(surface, red, rect)    # ventana a ejecuta, color , dimenciones del rectangulo
     pygame.draw.rect(surface, color2, rect2) # otro rectangulo 
+
+    pygame.draw.circle(surface, color2,(45,45),51) # a parte de cual ventana dibuja y el color la primera tupla indica la 
+    #posicion del centro del circulo y la otra indica el radio 
+    pygame.draw.line(surface, color2, (63,63),(200,200))      # son 2 tuplas una indica el inicio y al otra el fin de la line con cordenadas x1,y1 y x2,y2
+
 
     pygame.display.update()     # el .updata() es para que la pantalla se actualice y se ve el cambio 
 
