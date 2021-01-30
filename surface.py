@@ -58,8 +58,8 @@ while True:       # este while estara a la escucha de todo los eventos
 
     pygame.draw.circle(surface, color2,(45,45),51) # a parte de cual ventana dibuja y el color la primera tupla indica la 
     #posicion del centro del circulo y la otra indica el radio 
-    pygame.draw.line(surface, color2, (63,63),(200,200))      # son 2 tuplas una indica el inicio y al otra el fin de la line con cordenadas x1,y1 y x2,y2
-
+    pygame.draw.line(surface, color2, (63,63),(200,200), 20)      # son 2 tuplas una indica el inicio y al otra el fin de la line con 
+    # cordenadas x1,y1 y x2,y2 , el ultimo valor indica el grosor de la lineas en pixels
 
     pygame.display.update()     # el .updata() es para que la pantalla se actualice y se ve el cambio 
 
