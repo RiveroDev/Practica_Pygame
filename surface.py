@@ -64,7 +64,7 @@ while True:       # este while estara a la escucha de todo los eventos
     # figura mas complejas usando el modulo poligon()
     pygame.draw.polygon(surface,color2,((0,400),(100,300),(200,400)))  # en la tupla se coloca las cordenadas de los puntos y cadal poligono que queremos crear
 
-    pygame,draw.polygon(surface,color2,(
+    pygame.draw.polygon(surface,color2,(
         (146,0),
         (291,106),
         (236,277),
