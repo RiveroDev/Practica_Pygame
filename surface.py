@@ -60,7 +60,18 @@ while True:       # este while estara a la escucha de todo los eventos
     #posicion del centro del circulo y la otra indica el radio 
     pygame.draw.line(surface, color2, (63,63),(200,200), 20)      # son 2 tuplas una indica el inicio y al otra el fin de la line con 
     # cordenadas x1,y1 y x2,y2 , el ultimo valor indica el grosor de la lineas en pixels
+    ##-----------
+    # figura mas complejas usando el modulo poligon()
+    pygame.draw.polygon(surface,color2,((0,400),(100,300),(200,400)))  # en la tupla se coloca las cordenadas de los puntos y cadal poligono que queremos crear
 
+    pygame,draw.polygon(surface,color2,(
+        (146,0),
+        (291,106),
+        (236,277),
+        (56,277),
+        (0,106)))    # esto es un poligono de 5 puntas
+
+    #----------------------------------------------------
     pygame.display.update()     # el .updata() es para que la pantalla se actualice y se ve el cambio 
 
     
