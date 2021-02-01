@@ -52,6 +52,10 @@ while True:       # este while estara a la escucha de todo los eventos
 # tanto una tupla como la libreria color van dentro de fill()
     surface.fill(my_color)           #  .fill() resive un parameto y es el que pinta la pantalla
 
+rect = surface2.get_rect()  # optenemos las dimenciones de la superficie 2 
+rect.center = (width // 2 , height // 2)  # luego redimencionamos la pocisicion
+
+
 #---------------------------------------------------------------------------
 # usar el modulo draw()
 # se usa para dibujar en la superfici de la ventana 
@@ -78,6 +82,8 @@ while True:       # este while estara a la escucha de todo los eventos
 
     surface.blit(surface2, (100,100))  # con esta comando creamo la superficie nuemro 2
     # usando el blit() donde decimos que es la superfies 2 y agregamos una tupla que es la posicion donde se dibujara
+
+    pygame.draw.rect(surface2, color2, (100,50,80,40))
 
     #----------------------------------------------------
     pygame.display.update()     # el .updata() es para que la pantalla se actualice y se ve el cambio 
