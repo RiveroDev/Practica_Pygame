@@ -6,7 +6,6 @@ pygame.init()
 width = 400
 height = 500
 surface = pygame.display.set_mode((width, height)) # superficies esto define la ventana 
-
 # almacenamos la superfici en una variable 'surface'
 
 pygame.display.set_caption("Hola mundo!!") # este es el titulo de la ventana 
