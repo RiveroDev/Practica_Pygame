@@ -34,6 +34,10 @@ rect2 = (100,100,80,40) # x ,y , ancho, alto
 # si se crean rectangulos con tuplas no se pueden usar las propiedades de Rect()\
 # es por esto que si se necesita usar un rectangulo con movimiento se crean con Rect()
 # si los rectangulos vas a ses fijos sin movimiento se crean por medio de tuplas
+#--------------------------------------------------------------------------
+
+surface2 = pygame.Surface((200,200))   # esta es una nueva superficie
+
 
 #-----------------------------------------------------------------------
 # este ciclo white es el bucle que esta a la escucha de todos los eventos en pantalla
@@ -46,7 +50,6 @@ while True:       # este while estara a la escucha de todo los eventos
 # dentro del bucle se coloca el color 
 # tanto una tupla como la libreria color van dentro de fill()
     surface.fill(my_color)           #  .fill() resive un parameto y es el que pinta la pantalla
-   
 
 #---------------------------------------------------------------------------
 # usar el modulo draw()
@@ -70,6 +73,11 @@ while True:       # este while estara a la escucha de todo los eventos
         (56,277),
         (0,106)))    # esto es un poligono de 5 puntas
 
+
+
+    surface.blit(surface2, (100,100))  # con esta comando creamo la superficie nuemro 2
+    # usando el blit() donde decimos que es la superfies 2 y agregamos una tupla que es la posicion donde se dibujara
+    
     #----------------------------------------------------
     pygame.display.update()     # el .updata() es para que la pantalla se actualice y se ve el cambio 
 
