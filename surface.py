@@ -19,6 +19,7 @@ red = pygame.Color(255,0,0)  # nota .Color la c es en mayuscula
 # o por medio de tuplas
 my_color = (253,58,94)   # esta tupla genera un rgb tambien 
 color2 = (154,174,95)
+color3 = (0 , 143, 57)
 #---------------------------------------------------------------
 
 #--------------------------------------------------------------
@@ -37,7 +38,7 @@ rect2 = (100,100,80,40) # x ,y , ancho, alto
 #--------------------------------------------------------------------------
 
 surface2 = pygame.Surface((200,200))   # esta es una nueva superficie
-
+surface2.fill(color3)  # le agregamos un color 
 
 #-----------------------------------------------------------------------
 # este ciclo white es el bucle que esta a la escucha de todos los eventos en pantalla
@@ -77,7 +78,7 @@ while True:       # este while estara a la escucha de todo los eventos
 
     surface.blit(surface2, (100,100))  # con esta comando creamo la superficie nuemro 2
     # usando el blit() donde decimos que es la superfies 2 y agregamos una tupla que es la posicion donde se dibujara
-    
+
     #----------------------------------------------------
     pygame.display.update()     # el .updata() es para que la pantalla se actualice y se ve el cambio 
 
