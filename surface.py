@@ -40,6 +40,10 @@ rect2 = (100,100,80,40) # x ,y , ancho, alto
 surface2 = pygame.Surface((200,200))   # esta es una nueva superficie
 surface2.fill(color3)  # le agregamos un color 
 
+#-----------------------------------
+# para agregar una imagen .. tiene que ser png
+imagen = pygame.image.load('imagenes/chibipikachu.png') #--> con este comando podemos cargar una imagen y al asigamos a una variable 
+
 #-----------------------------------------------------------------------
 # este ciclo white es el bucle que esta a la escucha de todos los eventos en pantalla
 while True:       # este while estara a la escucha de todo los eventos 
