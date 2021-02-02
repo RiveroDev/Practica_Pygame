@@ -43,15 +43,14 @@ surface2.fill(color3)  # le agregamos un color
 #-----------------------------------
 # para agregar una imagen .. tiene que ser png
 imagen = pygame.image.load('imagenes/chibipikachu.png') #--> con este comando podemos cargar una imagen y al asigamos a una variable 
-rect3 = image.get_rect()
+rect3 = imagen.get_rect()
 rect3.center = (width // 2, height // 2)
 
 #-----------------------------------------------------------------------
 # colocar TEXTO 
 
 font = pygame.font.Font('freesansbold.ttf',36) # la fuente , el tamaño
-texto = font.render('Hola mundo', True, color3) # el texto a escribir, true ,color 
-
+texto = font.render('Hola mundo', True, my_color) # el texto a escribir, true ,color 
 #-----------------------------------------------------------------------
 # este ciclo white es el bucle que esta a la escucha de todos los eventos en pantalla
 while True:       # este while estara a la escucha de todo los eventos 
@@ -72,10 +71,7 @@ while True:       # este while estara a la escucha de todo los eventos
 #--------------------------------------    
     rect = surface2.get_rect()  # optenemos las dimenciones de la superficie 2 
     rect.center = (width // 2 , height // 2)  # luego redimencionamos la pocisicion
-#------------------------------------------------------------------------   
-    surface.blit(texto,(100,100))  #colocamos el texto  , el texto , cordenadas
 
-#---------------------------------------------------------------------------
 # usar el modulo draw()
 # se usa para dibujar en la superfici de la ventana 
 
@@ -104,6 +100,10 @@ while True:       # este while estara a la escucha de todo los eventos
 
     pygame.draw.rect(surface2, color2, (100,50,80,40))
 
+#------------------------------------------------------------------------   
+    surface.blit(texto,(100,100))  #colocamos el texto  , el texto , cordenadas
+
+#---------------------------------------------------------------------------
     #----------------------------------------------------
     pygame.display.update()     # el .updata() es para que la pantalla se actualice y se ve el cambio 
 
