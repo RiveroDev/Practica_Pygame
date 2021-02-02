@@ -60,10 +60,10 @@ while True:       # este while estara a la escucha de todo los eventos
 # cargaamos la imagen
     surface.blit(imagen , (100,100))  # cusamos el metodo , identificando la superficie y el .blit
     # luego cargamos los parametos de blit con imagen y cordenada donde se va a colocar
-    
+
 #--------------------------------------    
-rect = surface2.get_rect()  # optenemos las dimenciones de la superficie 2 
-rect.center = (width // 2 , height // 2)  # luego redimencionamos la pocisicion
+    rect = surface2.get_rect()  # optenemos las dimenciones de la superficie 2 
+    rect.center = (width // 2 , height // 2)  # luego redimencionamos la pocisicion
 
 
 #---------------------------------------------------------------------------
