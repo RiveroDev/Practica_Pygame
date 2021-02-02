@@ -51,6 +51,9 @@ rect3.center = (width // 2, height // 2)
 
 font = pygame.font.Font('freesansbold.ttf',36) # la fuente , el tamaño
 texto = font.render('Hola mundo', True, my_color) # el texto a escribir, true ,color 
+
+# podemos us una fuente gurdada solo calocando su direccion ejemplo
+#font = pygame.font.Font('<carpeta o ruta>/<nombre de la fuente>.ttf',<tamaño>)
 #-----------------------------------------------------------------------
 # este ciclo white es el bucle que esta a la escucha de todos los eventos en pantalla
 while True:       # este while estara a la escucha de todo los eventos 
