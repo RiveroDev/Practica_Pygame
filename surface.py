@@ -62,6 +62,12 @@ while True:       # este while estara a la escucha de todo los eventos
             pygame.quit()
             sys.exit()
 #-------------------------------
+
+    tiempo =  pygame.time.get_ticks()  # esta funcion noss retornara en mili segundos una variable de el tiempo trascurrido
+    print(tiempo) # imprime en terminal para ver el tiempo
+    # nota si dividimos en tiempo entre mil obtendremos los segundos ejemplo
+    # tiempo =  pygame.time.get_ticks() // 1000
+#-----------------------------------------
 # dentro del bucle se coloca el color 
 # tanto una tupla como la libreria color van dentro de fill()
     surface.fill(my_color)           #  .fill() resive un parameto y es el que pinta la pantalla
