@@ -55,7 +55,8 @@ pygame.mixer.music.set_volume(1.0)#  Float   esto es volumen que comprender desd
 pygame.mixer.music.rewind()
 pygame.mixer.music.pause()
 pygame.mixer.music.stop()
-pygame.mixer.music.fadeout() # detenemos la cancion pero no de forma abrupta
+pygame.mixer.music.fadeout() # detenemos la cancion pero no de forma abrupta, esta funcion recive un numero enter en milisegundos
+# esto nos dira en cuanto tiempo ira decreciendo el volumen de la melodia 
 
 #-----------------------------------
 # para agregar una imagen .. tiene que ser png
