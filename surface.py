@@ -119,7 +119,10 @@ while True:       # este while estara a la escucha de todo los eventos
     #---------------------------------------------------------
     seconds = pygame.time.get_ticks() // 1000
     text3 = font3.render(str(seconds), True, my_color)  # elsta funcion recive un str 
-#---------------------------------------------------------------------------
+    rect = text3.get_rect()
+    rect.center = (width // 2, height // 2)
+
+    #---------------------------------------------------------------------------
     #----------------------------------------------------
     pygame.display.update()     # el .updata() es para que la pantalla se actualice y se ve el cambio 
 
