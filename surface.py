@@ -54,6 +54,8 @@ texto = font.render('Hola mundo', True, my_color) # el texto a escribir, true ,c
 
 # podemos us una fuente gurdada solo calocando su direccion ejemplo
 #font = pygame.font.Font('<carpeta o ruta>/<nombre de la fuente>.ttf',<tamaño>)
+#-----------------------
+font3 = pygame.font.Font('freesansbold.ttf',46)
 #-----------------------------------------------------------------------
 # este ciclo white es el bucle que esta a la escucha de todos los eventos en pantalla
 while True:       # este while estara a la escucha de todo los eventos 
@@ -66,7 +68,7 @@ while True:       # este while estara a la escucha de todo los eventos
     tiempo =  pygame.time.get_ticks()  # esta funcion noss retornara en mili segundos una variable de el tiempo trascurrido
     print(tiempo) # imprime en terminal para ver el tiempo
     # nota si dividimos en tiempo entre mil obtendremos los segundos ejemplo
-    # tiempo =  pygame.time.get_ticks() // 1000
+    # tiempo =  pygame.time.get_ticks() // 1000 
 #-----------------------------------------
 # dentro del bucle se coloca el color 
 # tanto una tupla como la libreria color van dentro de fill()
@@ -112,6 +114,11 @@ while True:       # este while estara a la escucha de todo los eventos
 #------------------------------------------------------------------------   
     surface.blit(texto,(100,100))  #colocamos el texto  , el texto , cordenadas
 
+
+
+    #---------------------------------------------------------
+    seconds = pygame.time.get_ticks() // 1000
+    text3 = font3.render(str(seconds), True, my_color)  # elsta funcion recive un str 
 #---------------------------------------------------------------------------
     #----------------------------------------------------
     pygame.display.update()     # el .updata() es para que la pantalla se actualice y se ve el cambio 
