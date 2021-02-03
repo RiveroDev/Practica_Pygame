@@ -122,6 +122,7 @@ while True:       # este while estara a la escucha de todo los eventos
     rect = text3.get_rect()
     rect.center = (width // 2, height // 2)
 
+    surface.blit(text3, rect)
     #---------------------------------------------------------------------------
     #----------------------------------------------------
     pygame.display.update()     # el .updata() es para que la pantalla se actualice y se ve el cambio 
