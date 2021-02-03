@@ -52,7 +52,10 @@ pygame.mixer.music.play(2,0.0) ##  numero de vecer y el minuto donde queremos qu
 #  
 pygame.mixer.music.set_volume(1.0)#  Float   esto es volumen que comprender desde 0.0  a  1.0 
 #otros metodos para la manipulacion de la musica 
-
+pygame.mixer.music.rewind()
+pygame.mixer.music.pause()
+pygame.mixer.music.stop()
+pygame.mixer.music.fadeout() # detenemos la cancion pero no de forma abrupta
 
 #-----------------------------------
 # para agregar una imagen .. tiene que ser png
