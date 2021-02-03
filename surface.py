@@ -40,6 +40,20 @@ rect2 = (100,100,80,40) # x ,y , ancho, alto
 surface2 = pygame.Surface((200,200))   # esta es una nueva superficie
 surface2.fill(color3)  # le agregamos un color 
 
+
+# -------------------------------------------..
+
+## esto sirve para cargar un archivo de musica 
+
+pygame.mixer.music.load('<direccion del archivo mp3>')
+pygame.mixer.music.play(2,0.0) ##  numero de vecer y el minuto donde queremos que empiese
+# en este caso la cancion inicia desde el principio y se repetira 2veces
+# si queremso que la cancion nunca temine colocamos como valo -1
+#  
+pygame.mixer.music.set_volume(1.0)#  Float   esto es volumen que comprender desde 0.0  a  1.0 
+#otros metodos para la manipulacion de la musica 
+
+
 #-----------------------------------
 # para agregar una imagen .. tiene que ser png
 imagen = pygame.image.load('imagenes/chibipikachu.png') #--> con este comando podemos cargar una imagen y al asigamos a una variable 
@@ -126,6 +140,9 @@ while True:       # este while estara a la escucha de todo los eventos
     #---------------------------------------------------------------------------
     #----------------------------------------------------
     pygame.display.update()     # el .updata() es para que la pantalla se actualice y se ve el cambio 
+    # este es la parte mas importante de la funcion
+
+
 
     
 
