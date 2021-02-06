@@ -84,6 +84,9 @@ while True:       # este while estara a la escucha de todo los eventos
         if event.type == pygame.KEYDOWN:
             print(event) # al imprimir el vento .. nos muestra en pantalla que fue lo que se preciono  
 
+            if event.key == 115:   # aqui se determina que tecla se toco
+                print("se imprimio la letra s")
+
         if event.type == pygame.KEYUP:
             print("Tecla liberada")
 #-----------------------------------------------------
