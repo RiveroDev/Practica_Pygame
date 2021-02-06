@@ -82,7 +82,7 @@ while True:       # este while estara a la escucha de todo los eventos
 #-------------------------------
 # se agregan eventos de botones con la siguiente sintaxis
         if event.type == pygame.KEYDOWN:
-            print("boton abajo")
+            print(event) # al imprimir el vento .. nos muestra en pantalla que fue lo que se preciono  
 
         if event.type == pygame.KEYUP:
             print("Tecla liberada")
