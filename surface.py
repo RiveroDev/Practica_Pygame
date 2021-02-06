@@ -84,7 +84,9 @@ while True:       # este while estara a la escucha de todo los eventos
         if event.type == pygame.KEYDOWN:
             print("boton abajo")
 
-
+        if event.type == pygame.KEYUP:
+            print("Tecla liberada")
+#-----------------------------------------------------
 
     tiempo =  pygame.time.get_ticks()  # esta funcion noss retornara en mili segundos una variable de el tiempo trascurrido
     print(tiempo) # imprime en terminal para ver el tiempo
