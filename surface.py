@@ -6,7 +6,6 @@ pygame.init()
 width = 400
 height = 500
 surface = pygame.display.set_mode((width, height)) # superficies esto define la ventana 
-
 # almacenamos la superfici en una variable 'surface'
 
 pygame.display.set_caption("Hola mundo!!") # este es el titulo de la ventana 
@@ -20,6 +19,7 @@ red = pygame.Color(255,0,0)  # nota .Color la c es en mayuscula
 # o por medio de tuplas
 my_color = (253,58,94)   # esta tupla genera un rgb tambien 
 color2 = (154,174,95)
+color3 = (0 , 143, 57)
 #---------------------------------------------------------------
 
 #--------------------------------------------------------------
@@ -35,7 +35,43 @@ rect2 = (100,100,80,40) # x ,y , ancho, alto
 # si se crean rectangulos con tuplas no se pueden usar las propiedades de Rect()\
 # es por esto que si se necesita usar un rectangulo con movimiento se crean con Rect()
 # si los rectangulos vas a ses fijos sin movimiento se crean por medio de tuplas
+#--------------------------------------------------------------------------
+surface2 = pygame.Surface((200,200))   # esta es una nueva superficie
+surface2.fill(color3)  # le agregamos un color 
 
+# -------------------------------------------..
+
+## esto sirve para cargar un archivo de musica 
+
+pygame.mixer.music.load('<direccion del archivo mp3>')
+pygame.mixer.music.play(2,0.0) ##  numero de vecer y el minuto donde queremos que empiese
+# en este caso la cancion inicia desde el principio y se repetira 2veces
+# si queremso que la cancion nunca temine colocamos como valo -1
+#  
+pygame.mixer.music.set_volume(1.0)#  Float   esto es volumen que comprender desde 0.0  a  1.0 
+#otros metodos para la manipulacion de la musica 
+pygame.mixer.music.rewind()
+pygame.mixer.music.pause()
+pygame.mixer.music.stop()
+pygame.mixer.music.fadeout() # detenemos la cancion pero no de forma abrupta, esta funcion recive un numero enter en milisegundos
+# esto nos dira en cuanto tiempo ira decreciendo el volumen de la melodia 
+
+#-----------------------------------
+# para agregar una imagen .. tiene que ser png
+imagen = pygame.image.load('imagenes/chibipikachu.png') #--> con este comando podemos cargar una imagen y al asigamos a una variable 
+rect3 = imagen.get_rect()
+rect3.center = (width // 2, height // 2)
+
+#-----------------------------------------------------------------------
+# colocar TEXTO 
+
+font = pygame.font.Font('freesansbold.ttf',36) # la fuente , el tamaño
+texto = font.render('Hola mundo', True, my_color) # el texto a escribir, true ,color 
+
+# podemos us una fuente gurdada solo calocando su direccion ejemplo
+#font = pygame.font.Font('<carpeta o ruta>/<nombre de la fuente>.ttf',<tamaño>)
+#-----------------------
+font3 = pygame.font.Font('freesansbold.ttf',46)
 #-----------------------------------------------------------------------
 # este ciclo white es el bucle que esta a la escucha de todos los eventos en pantalla
 while True:       # este while estara a la escucha de todo los eventos 
@@ -44,12 +80,35 @@ while True:       # este while estara a la escucha de todo los eventos
             pygame.quit()
             sys.exit()
 #-------------------------------
+# se agregan eventos de botones con la siguiente sintaxis
+        if event.type == pygame.KEYDOWN:
+            print(event) # al imprimir el vento .. nos muestra en pantalla que fue lo que se preciono  
+
+            if event.key == 115:   # aqui se determina que tecla se toco
+                print("se imprimio la letra s")
+
+        if event.type == pygame.KEYUP:
+            print("Tecla liberada")
+#-----------------------------------------------------
+
+    tiempo =  pygame.time.get_ticks()  # esta funcion noss retornara en mili segundos una variable de el tiempo trascurrido
+    print(tiempo) # imprime en terminal para ver el tiempo
+    # nota si dividimos en tiempo entre mil obtendremos los segundos ejemplo
+    # tiempo =  pygame.time.get_ticks() // 1000 
+#-----------------------------------------
 # dentro del bucle se coloca el color 
 # tanto una tupla como la libreria color van dentro de fill()
     surface.fill(my_color)           #  .fill() resive un parameto y es el que pinta la pantalla
-   
 
-#---------------------------------------------------------------------------
+#-----------------------------------------
+# cargaamos la imagen
+    surface.blit(imagen , rect3)  # cusamos el metodo , identificando la superficie y el .blit
+    # luego cargamos los parametos de blit con imagen y cordenada donde se va a colocar
+
+#--------------------------------------    
+    rect = surface2.get_rect()  # optenemos las dimenciones de la superficie 2 
+    rect.center = (width // 2 , height // 2)  # luego redimencionamos la pocisicion
+
 # usar el modulo draw()
 # se usa para dibujar en la superfici de la ventana 
 
@@ -71,8 +130,21 @@ while True:       # este while estara a la escucha de todo los eventos
         (56,277),
         (0,106)))    # esto es un poligono de 5 puntas
 
+    surface.blit(surface2, (100,100))  # con esta comando creamo la superficie nuemro 2
+    # usando el blit() donde decimos que es la superfies 2 y agregamos una tupla que es la posicion donde se dibujara
+
+    pygame.draw.rect(surface2, color2, (100,50,80,40))
+
+#------------------------------------------------------------------------   
+    surface.blit(texto,(100,100))  #colocamos el texto  , el texto , cordenadas
+    #---------------------------------------------------------
+    seconds = pygame.time.get_ticks() // 1000
+    text3 = font3.render(str(seconds), True, my_color)  # elsta funcion recive un str 
+    rect = text3.get_rect()
+    rect.center = (width // 2, height // 2)
+
+    surface.blit(text3, rect)
+    #---------------------------------------------------------------------------
     #----------------------------------------------------
     pygame.display.update()     # el .updata() es para que la pantalla se actualice y se ve el cambio 
-
-    
-
+    # este es la parte mas importante de la funcion
